@@ -5,8 +5,8 @@ import data from '../../data'
 
 const Filter = () => {
 
-  const handlePeopleClick = () => {
 
+  const handlePeopleClick = () => {
 
   const filterPeople = data.filter(people => {
     if (people.category === "People")
@@ -15,21 +15,11 @@ const Filter = () => {
    
    const peopleCards = filterPeople.map(item => {
     return (
-      <div>
-        <div className='flex justify-between pt-10 pb-5'>
-            <p className='text-2xl font-semibold'>{item.name}</p>
-            <button className='bg-black text-white uppercase px-5 py-1'>add to cart</button>
-          </div>
-
-          <div className='relative'>
-            <img className=' w-full h-96 object-cover'src={item.image} alt=""/>
-            <div className='absolute bottom-0 left-0 bg-slate-100 font-semibold py-3 px-5'>Photo of the day</div>
-          </div>
-      </div>
+      console.log("Kliknuto na katergorii")
     )
   })
-
 }
+
 
   return (
     <>
@@ -41,7 +31,6 @@ const Filter = () => {
         <div className='py-5 flex flex-col space-y-6'>
          
          <button className='flex' onClick={handlePeopleClick}>
-          {peopleCards}
             <Form.Check
               category="people"
               type="checkbox"
